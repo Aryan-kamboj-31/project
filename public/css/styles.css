@@ -1,0 +1,332 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #01409e;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background: #01409e;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #0a6cbc; 
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d5aea;
+}
+
+#dashboard {
+    width: 80%;
+    margin: 0 auto;
+}
+/* Reset some default styles */
+table {
+    border-collapse: collapse; /* Collapse borders to avoid double borders */
+    width: 100%; /* Full width table */
+    margin: 20px 0; /* Margin around the table */
+    font-family: Arial, sans-serif; /* Set a clean font */
+}
+
+th, td {
+    padding: 12px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Light grey border for rows */
+}
+
+thead {
+    background-color: #f4f4f4; /* Light grey background for header */
+}
+
+th {
+    background-color: #0a6cbc;; /* Dark background for header */
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text for headers */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Light grey background on row hover */
+}
+
+table caption {
+    font-size: 1.5em; /* Larger font size for caption */
+    margin: 10px 0; /* Margin above and below caption */
+}
+
+table thead th {
+    border-top: 2px solid #333; /* Top border for header */
+    border-bottom: 2px solid #333; /* Bottom border for header */
+}
+
+
+.bck{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 900px;
+    background-image: url('/css/pexels-jplenio-1103970.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure it's behind other content */
+}
+.blur{
+    position: relative;
+    width: 200%;
+    max-width: 500px;
+    margin: 100px auto; /* Center the login container */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.151); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Shadow for better visibility */
+}
+.bck1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:630px;
+    background-image: url('/css/pexels-jplenio-1103970.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure it's behind other content */
+}
+.blur1{
+    position: relative;
+    width: 200%;
+    max-width: 500px;
+    margin: 100px auto; /* Center the login container */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.151); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Shadow for better visibility */
+}
+.bck2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background-image: url('/css/pexels-pixabay-355829.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure it's behind other content */
+}
+.blur2{
+    position: relative;
+    width: 200%;
+    max-width: 500px;
+    margin: 100px auto; /* Center the login container */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.226); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Optional: Shadow for better visibility */
+    font-size: 22px;
+}
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #1d5aea;
+    padding: 15px 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #154bb5;
+    transform: scale(1.1);
+}
+
+.image {
+    margin-top: -39px;
+    background-image: url('/css/pexels.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.features, .cta {
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features ul li {
+    background-color: #eef;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.features ul li:hover {
+    transform: scale(1.05);
+}
+
+.cta .btn {
+    display: inline-block;
+    background-color: #1d5aea;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta .btn:hover {
+    background-color: #154bb5;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #1d5aea;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        margin-right: 5px;
+    }
+
+    .image {
+        height: 300px;
+    }
+
+    .features, .cta {
+        padding: 20px 10px;
+    }
+
+    .cta .btn {
+        padding: 10px 20px;
+    }
+}

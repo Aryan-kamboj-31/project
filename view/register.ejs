@@ -1,0 +1,161 @@
+<%- include('layouts/layout', { body: `` }) %>
+
+<style>
+    /* Background and Form Styles */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1d5aea, #4b6cb7); /* Gradient background */
+        color: #fff;
+    }
+
+    .blur {
+        background: rgba(255, 255, 255, 0.9); /* Transparent white background */
+        backdrop-filter: blur(15px); /* Stronger blur effect */
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 40px;
+        position: relative;
+        z-index: 1;
+        animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+    }
+
+    .blur h1 {
+        margin-bottom: 30px;
+        text-align: center;
+        color: #333;
+        font-size: 2em;
+    }
+
+    .blur form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blur form div {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .blur label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        font-weight: bold;
+        color: #777;
+        font-size: 16px;
+        transform: translateY(-50%);
+        transition: 0.3s ease;
+        pointer-events: none;
+    }
+
+    .blur input,
+    .blur textarea {
+        width: 100%;
+        padding: 15px;
+        border: none; /* No border */
+        border-radius: 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+        background: #f0f0f0;
+        color: #333;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: box-shadow 0.3s ease;
+    }
+
+    .blur input:focus,
+    .blur textarea:focus {
+        box-shadow: 0 0 10px rgba(29, 90, 234, 0.4); /* Focus effect */
+    }
+
+    .blur input:focus + label,
+    .blur textarea:focus + label,
+    .blur input:not(:placeholder-shown) + label,
+    .blur textarea:not(:placeholder-shown) + label {
+        top: -10px;
+        left: 15px;
+        font-size: 12px;
+        color: #1d5aea;
+        font-weight: normal;
+    }
+
+    .blur button {
+        background-color: #1d5aea;
+        color: #fff;
+        padding: 15px;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .blur button:hover {
+        background-color: #154bb5;
+    }
+
+    .error {
+        color: #e74c3c;
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+
+    .success {
+        color: #2ecc71;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Animation for background */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<div class="blur">
+    <h1>Register</h1>
+    <form action="/register" method="POST" id="registerForm">
+        <div>
+            <input type="text" id="username" name="name" required placeholder=" ">
+            <label for="username">Username:</label>
+            <div class="error" id="usernameError"></div>
+        </div>
+        <div>
+            <input type="email" id="email" name="email" required placeholder=" ">
+            <label for="email">Email:</label>
+            <div class="error" id="emailError"></div>
+        </div>
+        <div>
+            <input type="number" id="number" name="number" required placeholder=" ">
+            <label for="number">Number:</label>
+            <div class="error" id="numberError"></div>
+        </div>
+        <div>
+            <input type="password" id="password" name="pass" required placeholder=" ">
+            <label for="password">Password:</label>
+            <div class="error" id="passwordError"></div>
+        </div>
+        <div>
+            <textarea placeholder=" " name="skills"></textarea>
+            <label for="skills">Enter your skills:</label>
+        </div>
+        <div>
+            <button type="submit">Create</button>
+        </div>
+        <div class="success" id="formSuccess"></div>
+    </form>
+</div>
+
+<%- include('layouts/footer') %>
+

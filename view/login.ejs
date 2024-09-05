@@ -1,0 +1,212 @@
+<%- include('layouts/layout', { body: `` }) %>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #1d5aea, #4b6cb7); /* Gradient background */
+        color: #fff;
+    }
+
+    .bck1 {
+        background: rgba(255, 255, 255, 0.2); /* Light overlay */
+        backdrop-filter: blur(12px); /* Enhanced blur effect */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .blur1 {
+        background: rgba(255, 255, 255, 0.95); /* Slightly opaque background */
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+        max-width: 450px;
+        margin: 80px auto;
+        padding: 40px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+    }
+
+    .blur1 h1 {
+        margin-bottom: 20px;
+        color: #1d5aea; /* Accent color */
+        font-size: 2.2em;
+        font-weight: 600;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Text shadow */
+    }
+
+    .blur1 form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blur1 form div {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .blur1 label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        font-weight: bold;
+        color: #777;
+        font-size: 16px;
+        transform: translateY(-50%);
+        transition: 0.3s ease;
+        pointer-events: none;
+    }
+
+    .blur1 input {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ddd; /* Added border for better definition */
+        border-radius: 10px;
+        font-size: 16px;
+        background: #f8f8f8;
+        color: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .blur1 input:focus {
+        box-shadow: 0 0 12px rgba(29, 90, 234, 0.4); /* Enhanced focus effect */
+        border-color: #1d5aea; /* Border color on focus */
+    }
+
+    .blur1 input:focus + label,
+    .blur1 input:not(:placeholder-shown) + label {
+        top: -10px;
+        left: 15px;
+        font-size: 12px;
+        color: #1d5aea;
+        font-weight: normal;
+    }
+
+    .blur1 button {
+        background-color: #1d5aea;
+        color: #fff;
+        padding: 15px 25px;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-top: 20px;
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .blur1 button:hover {
+        background-color: #154bb5;
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+
+    .blur1 button:active {
+        transform: scale(0.95); /* Press effect */
+    }
+
+    /* Animation for background */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .blur1 {
+            padding: 30px;
+            margin: 20px;
+        }
+
+        .blur1 h1 {
+            font-size: 1.8em;
+        }
+
+        .blur1 input {
+            font-size: 14px;
+            padding: 12px;
+        }
+
+        .blur1 button {
+            font-size: 16px;
+            padding: 12px 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .blur1 {
+            padding: 20px;
+            margin: 15px;
+        }
+
+        .blur1 h1 {
+            font-size: 1.5em;
+        }
+
+        .blur1 input {
+            font-size: 13px;
+            padding: 10px;
+        }
+
+        .blur1 button {
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+    }
+</style>
+
+<div class="bck1"></div>
+
+<div class="blur1">
+    <h1>Login</h1>
+    <form action="/login" method="POST" onsubmit="return validateForm()">
+        <% if (typeof error !== 'undefined') { %>
+            <p style="color: red; margin-bottom: 20px;"><%= error %></p>
+        <% } %>
+    
+        <div>
+            <input type="text" id="username" name="name" required placeholder=" ">
+            <label for="username">Username:</label>
+        </div>
+    
+        <div>
+            <input type="password" id="password" name="pass" required placeholder=" ">
+            <label for="password">Password:</label>
+        </div>
+
+        <!-- Google reCAPTCHA widget -->
+        <div class="g-recaptcha" data-sitekey="6Le51jEqAAAAAJbNCyz-JEeMT4JUCMXjvC_aiWhG"></div>
+
+        <% if (typeof error !== 'undefined') { %>
+            <p><a href="/forgotten_password" method="get">Forgotten password?</a></p>
+        <% } %>
+    
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
+
+<%- include('layouts/footer') %>
+
+<!-- Load the reCAPTCHA API -->
+<script>
+    function validateForm() {
+        var captchaResponse = grecaptcha.getResponse();
+        if (captchaResponse.length === 0) {
+            alert('Please complete the CAPTCHA before logging in.');
+            return false;
+        }
+        return true;
+    }
+</script>

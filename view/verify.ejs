@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Message</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f3f4f6, #ffffff); /* Light gradient background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .message-container {
+            background: #1d5aea;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .message-container::before {
+            content: "📧"; /* Email icon */
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .message-container:hover::before {
+            opacity: 1;
+        }
+
+        .message-container h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .message-container p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <h1>Interview Scheduled</h1>
+        <p>Your interview timing will be sent to your email.</p>
+    </div>
+</body>
+</html>
