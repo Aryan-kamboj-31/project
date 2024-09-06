@@ -7,6 +7,10 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: linear-gradient(135deg, #1d5aea, #4b6cb7); /* Gradient background */
         color: #fff;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .bck2 {
@@ -23,6 +27,7 @@
         border-radius: 20px;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
         max-width: 700px;
+        width: 90%; /* Adjust for smaller screens */
         margin: 60px auto;
         padding: 50px;
         position: relative;
@@ -35,16 +40,17 @@
     .blur2 h1 {
         margin-bottom: 30px;
         color: #1d5aea; /* Accent color for the header */
-        font-size: 2.8em;
+        font-size: 2.5em;
         font-weight: 600;
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Text shadow for better readability */
     }
 
     .blur2 p {
-        font-size: 1.3em;
+        font-size: 1.2em;
         color: #333;
         margin: 15px 0;
         line-height: 1.8;
+        word-wrap: break-word; /* For long text */
     }
 
     .blur2 button {
@@ -141,3 +147,4 @@
 </div>
 
 <%- include('layouts/footer') %>
+

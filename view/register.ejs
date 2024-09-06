@@ -121,6 +121,51 @@
             opacity: 1;
         }
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .blur {
+            padding: 30px;
+            margin: 30px;
+        }
+
+        .blur h1 {
+            font-size: 1.8em;
+        }
+
+        .blur input,
+        .blur textarea {
+            font-size: 14px;
+            padding: 12px;
+        }
+
+        .blur button {
+            font-size: 16px;
+            padding: 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .blur {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .blur h1 {
+            font-size: 1.5em;
+        }
+
+        .blur input,
+        .blur textarea {
+            font-size: 13px;
+            padding: 10px;
+        }
+
+        .blur button {
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+    }
 </style>
 
 <div class="blur">
@@ -158,4 +203,3 @@
 </div>
 
 <%- include('layouts/footer') %>
-

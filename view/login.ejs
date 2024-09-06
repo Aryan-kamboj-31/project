@@ -141,6 +141,11 @@
             font-size: 16px;
             padding: 12px 20px;
         }
+
+        .g-recaptcha {
+            transform: scale(0.9); /* Scale down the reCAPTCHA for better fit */
+            transform-origin: 0 0;
+        }
     }
 
     @media (max-width: 480px) {
@@ -162,6 +167,11 @@
             font-size: 14px;
             padding: 10px 15px;
         }
+
+        .g-recaptcha {
+            transform: scale(0.85); /* Further scale down for mobile */
+            transform-origin: 0 0;
+        }
     }
 </style>
 
@@ -173,12 +183,12 @@
         <% if (typeof error !== 'undefined') { %>
             <p style="color: red; margin-bottom: 20px;"><%= error %></p>
         <% } %>
-    
+
         <div>
             <input type="text" id="username" name="name" required placeholder=" ">
             <label for="username">Username:</label>
         </div>
-    
+
         <div>
             <input type="password" id="password" name="pass" required placeholder=" ">
             <label for="password">Password:</label>
@@ -190,7 +200,7 @@
         <% if (typeof error !== 'undefined') { %>
             <p><a href="/forgotten_password" method="get">Forgotten password?</a></p>
         <% } %>
-    
+
         <div>
             <button type="submit">Login</button>
         </div>
