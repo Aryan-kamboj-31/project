@@ -50,11 +50,11 @@ router.post('/register', async (req, res) => {
         console.error('Error registering user:', err.message);
 
         // If there is an error, such as a network issue, show an appropriate error message
-    //     if (err.code === 'ENOTFOUND' || err.code === 'ECONNREFUSED') {
-    //         res.status(503).send('Network error. Please check your internet connection and try again.');
-    //     } else {
-    //         res.status(500).send('Internal server error. Please try again later.');
-    //     }
+        if (err.code === 'ENOTFOUND' || err.code === 'ECONNREFUSED') {
+            res.status(503).send('Network error. Please check your internet connection and try again.');
+        } else {
+            res.status(500).send('Internal server error. Please try again later.');
+        }
     }
 });
 
