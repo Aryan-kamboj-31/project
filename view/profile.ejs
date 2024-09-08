@@ -1,4 +1,5 @@
-<%- include('layouts/layout', { body: '' }) %>
+<%- include('layouts/layout', { body: `` }) %>
+
 <style>
     body {
         margin: 0;
@@ -6,10 +7,6 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: linear-gradient(135deg, #1d5aea, #4b6cb7); /* Gradient background */
         color: #fff;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .bck2 {
@@ -131,16 +128,15 @@
 <div class="blur2">
     <h1>User Profile</h1>
     <% if (user) { %>
-        <p><strong>Username:</strong> <%= user.name %></p>
-        <p><strong>Email:</strong> <%= user.email %></p>
-        <p><strong>Skills:</strong> <%= user.skills %></p>
-        <p><strong>Phone Number:</strong> <%= user.number %></p>
+    <p><strong>Username:</strong> <%= user.name %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Skills:</strong> <%= user.skills %></p>
+    <p><strong>Phone Number:</strong> <%= user.number %></p>
     <% } else { %>
-        <p>No user information available.</p>
+    <p>No user information available.</p>
     <% } %>
     <form action="/logout" method="POST" style="display:inline;">
         <button type="submit">Logout</button>
     </form>
 </div>
-
 <%- include('layouts/footer') %>
