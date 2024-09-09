@@ -43,7 +43,6 @@ router.post('/register', async (req, res) => {
     try {
         // Attempt to insert the user data into the database
         await db.query('INSERT INTO users (name, email, pass, skills, number) VALUES (?, ?, ?, ?, ?)', [name, email, pass, skills, number]);
-        
         // Redirect to login page upon successful registration
         res.redirect('/login');
     } catch (err) {
