@@ -60,7 +60,7 @@ form input, form select, form textarea {
 }
 
 button {
-    background-color: #0a6cbc; 
+    background-color: #222; 
     color: #fff;
     border: none;
     padding: 10px;
@@ -68,7 +68,7 @@ button {
 }
 
 button:hover {
-    background-color: #1d5aea;
+    background-color: rgb(234, 116, 13)
 }
 
 #dashboard {
