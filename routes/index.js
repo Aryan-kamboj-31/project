@@ -499,4 +499,5 @@ router.post('/companyedit/:id',async(req,res)=>{
     router.get('/contact',(req,res)=>{
         res.send("contact as on our email:aryankamboj31@gmail.com");
     })
+    
 module.exports = router;
