@@ -32,56 +32,168 @@
     .modal-content {
         border-radius: 10px;
     }
+
+    .feature-icons i {
+        font-size: 40px;
+        color: #1d5aea;
+        margin-bottom: 10px;
+    }
+
+    .pricing-plan:hover {
+        background-color: #e9ecef;
+    }
+
+    .team img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
 </style>
 
-<div class="container">
-    <div class="image d-flex flex-column justify-content-center">
-        <h1 class="display-4">Welcome to NextStep Jobs</h1>
-        <p>Track your job applications efficiently. Still using Excel or Google Sheets? Manage everything here!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">NextStep Jobs</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="/register">Sign Up</a></li>
+            </ul>
+        </div>
     </div>
+</nav>
 
-    <section class="features py-5 text-center">
-        <h2 class="text-primary">Features</h2>
-        <p>Manage your job search more effectively.</p>
-        <ul class="list-unstyled">
-            <li class="list-item py-2">Track job applications</li>
-            <li class="list-item py-2">Organize interview schedules</li>
-            <li class="list-item py-2">Monitor application status</li>
-            <li class="list-item py-2">Get personalized job recommendations</li>
-            <li class="list-item py-2">Receive job alerts directly to your inbox</li>
-        </ul>
-    </section>
+<div class="container-fluid image d-flex flex-column justify-content-center">
+    <h1 class="display-4">Welcome to NextStep Jobs</h1>
+    <p>Manage your job applications efficiently with our powerful tools!</p>
+</div>
 
-    <section class="how-it-works py-5 bg-light text-center">
+<div class="container py-5" id="features">
+    <h2 class="text-primary text-center">Features</h2>
+    <p class="text-center">Everything you need to manage your job search effectively.</p>
+    <div class="row text-center feature-icons">
+        <div class="col-md-4">
+            <i class="bi bi-check-circle"></i>
+            <h5>Track Applications</h5>
+            <p>Monitor all your applications in one place with real-time updates.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="bi bi-calendar-event"></i>
+            <h5>Organize Interviews</h5>
+            <p>Keep track of upcoming interviews and important dates.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="bi bi-bell"></i>
+            <h5>Get Job Alerts</h5>
+            <p>Receive tailored job alerts based on your profile and preferences.</p>
+        </div>
+    </div>
+</div>
+
+<section class="bg-light py-5" id="how-it-works">
+    <div class="container text-center">
         <h2 class="text-primary">How It Works</h2>
-        <ul class="list-unstyled">
-            <li class="list-item py-2">Sign up and create a profile</li>
-            <li class="list-item py-2">Start adding job applications</li>
-            <li class="list-item py-2">Use our tools to track interviews</li>
-            <li class="list-item py-2">Get recommendations based on your profile</li>
-        </ul>
-    </section>
-
-    <section class="testimonials py-5 text-center">
-        <h2 class="text-primary">Testimonials</h2>
         <div class="row">
-            <div class="col-md-6">
-                <blockquote class="blockquote">
-                    <p>"NextStep Jobs has revolutionized how I track my job applications!"</p>
-                    <footer class="blockquote-footer">John Doe</footer>
-                </blockquote>
+            <div class="col-md-3">
+                <h5>Step 1</h5>
+                <p>Sign up and create your personalized profile.</p>
             </div>
-            <div class="col-md-6">
-                <blockquote class="blockquote">
-                    <p>"I love the resume builder and the job recommendations."</p>
-                    <footer class="blockquote-footer">Jane Smith</footer>
-                </blockquote>
+            <div class="col-md-3">
+                <h5>Step 2</h5>
+                <p>Add job applications and track progress.</p>
+            </div>
+            <div class="col-md-3">
+                <h5>Step 3</h5>
+                <p>Use our tools to manage interviews and deadlines.</p>
+            </div>
+            <div class="col-md-3">
+                <h5>Step 4</h5>
+                <p>Receive job recommendations and alerts.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="faq py-5 bg-light text-center">
-        <h2 class="text-primary">Frequently Asked Questions</h2>
+<section class="pricing py-5" id="pricing">
+    <div class="container">
+        <h2 class="text-primary text-center">Pricing Plans</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card pricing-plan p-4">
+                    <h3>Free</h3>
+                    <p>Basic tools for individual job seekers.</p>
+                    <p class="price">$0/month</p>
+                    <ul class="list-unstyled">
+                        <li>Track applications</li>
+                        <li>Resume builder</li>
+                        <li>Email notifications</li>
+                    </ul>
+                    <a href="/register" class="btn btn-outline-primary">Get Started</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card pricing-plan p-4">
+                    <h3>Premium</h3>
+                    <p>More features for power users.</p>
+                    <p class="price">$15/month</p>
+                    <ul class="list-unstyled">
+                        <li>Personalized job alerts</li>
+                        <li>Interview scheduling</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="/register" class="btn btn-primary">Get Premium</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card pricing-plan p-4">
+                    <h3>Pro</h3>
+                    <p>For advanced users and recruiters.</p>
+                    <p class="price">$30/month</p>
+                    <ul class="list-unstyled">
+                        <li>Advanced analytics</li>
+                        <li>Data export</li>
+                        <li>Integration with LinkedIn</li>
+                    </ul>
+                    <a href="/register" class="btn btn-outline-primary">Go Pro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team py-5 bg-light text-center" id="team">
+    <div class="container">
+        <h2 class="text-primary">Meet the Team</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="/path/to/team1.jpg" alt="Team Member 1">
+                <h5>John Doe</h5>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="col-md-4">
+                <img src="/path/to/team2.jpg" alt="Team Member 2">
+                <h5>Jane Smith</h5>
+                <p>Chief Technology Officer</p>
+            </div>
+            <div class="col-md-4">
+                <img src="/path/to/team3.jpg" alt="Team Member 3">
+                <h5>Michael Lee</h5>
+                <p>Head of Marketing</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq py-5" id="faq">
+    <div class="container">
+        <h2 class="text-primary text-center">Frequently Asked Questions</h2>
         <div class="accordion" id="faqAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header">
@@ -108,23 +220,47 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="cta text-center py-5">
-        <h2 class="text-primary">Get Started Today</h2>
-        <a href="/register" class="btn btn-primary btn-lg">Sign Up for Free</a>
-    </section>
-</div>
-
-<!-- Modal -->
-<div id="modal" class="modal fade" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content text-center p-4">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            <div id="modal-body">More information...</div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    What are the benefits of upgrading to the Premium plan?
+                </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    The Premium plan includes personalized job alerts, interview scheduling tools, and priority customer support for a smoother job search experience.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    Can I cancel my subscription at any time?
+                </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes, you can cancel your subscription anytime from your account settings without any additional charges.
+                </div>
+            </div>
         </div>
     </div>
 </div>
+</section>
+
+<footer class="bg-dark text-white py-4">
+<div class="container text-center">
+    <p>&copy; 2024 NextStep Jobs. All rights reserved.</p>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+        <li class="list-inline-item"><a href="#" class="text-white">Contact Us</a></li>
+    </ul>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <%- include('layouts/footer') %>
 
