@@ -490,4 +490,13 @@ router.post('/companyedit/:id',async(req,res)=>{
             res.status(500).send('An error occurred. Please try again later.');
         }
     });
+    router.get('/policys',(req,res)=>{
+        res.render('private');
+    })
+    router.get('/terms',(req,res)=>{
+        res.render('terms');
+    })
+    router.get('/contact',(req,res)=>{
+        res.send("contact as on our email:aryankamboj31@gmail.com");
+    })
 module.exports = router;
