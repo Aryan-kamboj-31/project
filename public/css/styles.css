@@ -94,7 +94,7 @@ thead {
 }
 
 th {
-    background-color: #0a6cbc;; /* Dark background for header */
+    background-color:  #222;; /* Dark background for header */
     color: white; /* White text color */
     font-weight: bold; /* Bold text for headers */
 }
