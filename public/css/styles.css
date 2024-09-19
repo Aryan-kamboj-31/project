@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background:  #222;
+    background: #01409e;
     color: #fff;
     padding: 10px 0;
 }
@@ -37,7 +37,7 @@ main {
 }
 
 footer {
-    background:  #222;
+    background: #01409e;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -60,7 +60,7 @@ form input, form select, form textarea {
 }
 
 button {
-    background-color: #222; 
+    background-color: #0a6cbc; 
     color: #fff;
     border: none;
     padding: 10px;
@@ -68,7 +68,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(234, 116, 13)
+    background-color: #1d5aea;
 }
 
 #dashboard {
@@ -94,7 +94,7 @@ thead {
 }
 
 th {
-    background-color:  #222;; /* Dark background for header */
+    background-color: #0a6cbc;; /* Dark background for header */
     color: white; /* White text color */
     font-weight: bold; /* Bold text for headers */
 }
@@ -189,7 +189,7 @@ body {
 }
 
 header {
-    background-color:  #222;
+    background-color: #1d5aea;
     padding: 15px 20px;
     color: white;
     text-align: center;
@@ -217,7 +217,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #db8114;
+    background-color: #154bb5;
     transform: scale(1.1);
 }
 
