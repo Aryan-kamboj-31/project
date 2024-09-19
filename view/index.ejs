@@ -1,5 +1,7 @@
 <%- include('layouts/layout', { body: '' }) %>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <style>
     body {
         margin: 0;
@@ -9,25 +11,16 @@
         color: #333;
     }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
     .image {
-        margin-top: -39px;
         background-image: url('/css/pexels.jpg');
         background-size: cover;
         background-position: center;
-        color: #ffffff;
-        padding: 50px 20px;
-        text-align: center;
+        color: #fff;
         height: 500px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
         animation: fadeIn 2s ease-in-out;
     }
 
@@ -36,359 +29,114 @@
         to { opacity: 1; }
     }
 
-    .features, .cta, .testimonials, .faq, .how-it-works, .pricing, .contact-us {
-        padding: 40px 20px;
-        text-align: center;
-        background-color: #f8f8f8;
-        border-bottom: 2px solid #ddd;
-    }
-
-    .features h2, .cta h2, .testimonials h2, .faq h2, .how-it-works h2, .pricing h2, .contact-us h2 {
-        color: #1d5aea;
-        margin-bottom: 20px;
-    }
-
-    .features ul, .faq ul, .how-it-works ul, .pricing ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .features ul li, .faq ul li, .how-it-works ul li, .pricing ul li {
-        font-size: 18px;
-        margin: 10px 0;
-        cursor: pointer;
-    }
-
-    .cta {
-        background-color: #ffffff;
-    }
-
-    .cta .btn {
-        display: inline-block;
-        padding: 15px 30px;
-        font-size: 18px;
-        color: #ffffff;
-        background-color: #1d5aea;
-        border: none;
-        border-radius: 5px;
-        text-decoration: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .cta .btn:hover {
-        background-color: #154bb5;
-    }
-
-    .testimonials {
-        background-color: #ffffff;
-    }
-
-    .testimonial-item {
-        margin-bottom: 20px;
-    }
-
-    .testimonial-item p {
-        font-size: 16px;
-        font-style: italic;
-        color: #555;
-    }
-
-    .testimonial-item .author {
-        font-weight: bold;
-        margin-top: 10px;
-        color: #1d5aea;
-    }
-
-    .faq ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    .faq ul li {
-        background-color: #ffffff;
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .faq ul li:hover {
-        background-color: #f0f0f0;
-    }
-
-    .faq ul li .question {
-        font-weight: bold;
-    }
-
-    .pricing ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .pricing ul li {
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        flex: 1 1 calc(33% - 40px);
-        margin: 10px;
-        min-width: 250px;
-    }
-
-    .pricing ul li:hover {
-        background-color: #f0f0f0;
-    }
-
-    .pricing ul li .plan-name {
-        font-weight: bold;
-        font-size: 22px;
-        color: #1d5aea;
-    }
-
-    .pricing ul li .price {
-        font-size: 30px;
-        margin: 10px 0;
-    }
-
-    .pricing ul li .features {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0;
-    }
-
-    .pricing ul li .features li {
-        margin: 5px 0;
-    }
-
-    .contact-us form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .contact-us form input, .contact-us form textarea {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
-    .contact-us form textarea {
-        resize: vertical;
-    }
-
-    .contact-us form .btn {
-        align-self: center;
-    }
-
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-
     .modal-content {
-        background-color: #ffffff;
-        margin: 10% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 600px;
-        text-align: center;
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .modal-close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .modal-close:hover,
-    .modal-close:focus {
-        color: #000;
-        text-decoration: none;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .image {
-            height: 300px;
-            padding: 30px 15px;
-        }
-
-        .image h1 {
-            font-size: 2em;
-        }
-
-        .features ul, .faq ul, .how-it-works ul, .pricing ul {
-            flex-direction: column;
-            padding-left: 0;
-        }
-
-        .features ul li, .faq ul li, .how-it-works ul li, .pricing ul li {
-            font-size: 16px;
-        }
-
-        .cta .btn {
-            font-size: 16px;
-            padding: 10px 20px;
-        }
-
-        .modal-content {
-            width: 90%;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .image {
-            height: 250px;
-            padding: 20px 10px;
-        }
-
-        .image h1 {
-            font-size: 1.5em;
-        }
-
-        .features h2, .cta h2, .testimonials h2, .faq h2, .how-it-works h2, .pricing h2, .contact-us h2 {
-            font-size: 1.5em;
-        }
-
-        .features ul li, .faq ul li, .how-it-works ul li, .pricing ul li {
-            font-size: 14px;
-        }
-
-        .cta .btn {
-            font-size: 14px;
-            padding: 8px 15px;
-        }
-
-        .modal-content {
-            width: 95%;
-        }
     }
 </style>
 
 <div class="container">
-    <div class="image">
-        <h1>Welcome to NextStep Jobs</h1>
-        <p>Track your job applications efficiently. Are you still tracking jobs</p>
-        <p>in Excel or Google Sheets? Track and manage your job listings,</p>
-        <p>applications, and interviews all in one place. It's</p>
-        <p>easy. It's efficient. It's powerful.</p>
+    <div class="image d-flex flex-column justify-content-center">
+        <h1 class="display-4">Welcome to NextStep Jobs</h1>
+        <p>Track your job applications efficiently. Still using Excel or Google Sheets? Manage everything here!</p>
     </div>
 
-    <div class="features">
-        <h2>Features</h2>
+    <section class="features py-5 text-center">
+        <h2 class="text-primary">Features</h2>
         <p>Manage your job search more effectively.</p>
-        <ul>
-            <li>Track job applications</li>
-            <li>Organize interview schedules</li>
-            <li>Monitor application status</li>
-            <li>Get personalized job recommendations</li>
-            <li>Receive job alerts directly to your inbox</li>
-            <li>Access resume-building tools</li>
-            <li>Save favorite job listings</li>
-            <li>Export application data to Excel</li>
-            <li>Integrate with LinkedIn for easy application</li>
-            <li>Set reminders for follow-up actions</li>
+        <ul class="list-unstyled">
+            <li class="list-item py-2">Track job applications</li>
+            <li class="list-item py-2">Organize interview schedules</li>
+            <li class="list-item py-2">Monitor application status</li>
+            <li class="list-item py-2">Get personalized job recommendations</li>
+            <li class="list-item py-2">Receive job alerts directly to your inbox</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="how-it-works">
-        <h2>How It Works</h2>
-        <ul>
-            <li>Sign up and create a profile</li>
-            <li>Start adding job applications to your dashboard</li>
-            <li>Use our tools to track interviews and follow-ups</li>
-            <li>Get recommendations based on your profile</li>
-            <li>Manage everything from one easy-to-use platform</li>
+    <section class="how-it-works py-5 bg-light text-center">
+        <h2 class="text-primary">How It Works</h2>
+        <ul class="list-unstyled">
+            <li class="list-item py-2">Sign up and create a profile</li>
+            <li class="list-item py-2">Start adding job applications</li>
+            <li class="list-item py-2">Use our tools to track interviews</li>
+            <li class="list-item py-2">Get recommendations based on your profile</li>
         </ul>
-    </div>
-    <div class="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial-item">
-            <p>"NextStep Jobs has revolutionized how I track my job applications. The intuitive interface and powerful tools have made my job search so much easier!"</p>
-            <p class="author">- John Doe</p>
-        </div>
-        <div class="testimonial-item">
-            <p>"I love the resume builder and the personalized job recommendations. It's like having a personal assistant for my job search."</p>
-            <p class="author">- Jane Smith</p>
-        </div>
-    </div>
+    </section>
 
-    <div class="faq">
-        <h2>Frequently Asked Questions</h2>
-        <ul>
-            <li>
-                <p class="question">How does the job tracking feature work?</p>
-                <p>Our job tracking tool allows you to add job listings to your dashboard, monitor application status, and set reminders for follow-ups.</p>
-            </li>
-            <li>
-                <p class="question">Can I use NextStep Jobs for free?</p>
-                <p>Yes, our Free Plan offers basic job tracking and resume-building tools at no cost.</p>
-            </li>
-            <li>
-                <p class="question">What are the benefits of the Premium and Pro Plans?</p>
-                <p>The Premium and Pro Plans offer advanced features like personalized job recommendations, interview scheduling, and priority support.</p>
-            </li>
-            <li>
-                <p class="question">How can I export my data?</p>
-                <p>With the Pro Plan, you can easily export your job application data to Excel for further analysis or record-keeping.</p>
-            </li>
-        </ul>
-    </div>
-    <div class="cta">
-        <h2>Get Started Today</h2>
-        <a href="/register" class="btn">Sign Up for Free</a>
-    </div>
+    <section class="testimonials py-5 text-center">
+        <h2 class="text-primary">Testimonials</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <blockquote class="blockquote">
+                    <p>"NextStep Jobs has revolutionized how I track my job applications!"</p>
+                    <footer class="blockquote-footer">John Doe</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-6">
+                <blockquote class="blockquote">
+                    <p>"I love the resume builder and the job recommendations."</p>
+                    <footer class="blockquote-footer">Jane Smith</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq py-5 bg-light text-center">
+        <h2 class="text-primary">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        How does the job tracking feature work?
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Our job tracking tool allows you to add job listings, monitor status, and set follow-up reminders.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        Can I use NextStep Jobs for free?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, our Free Plan offers basic job tracking and resume-building tools at no cost.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta text-center py-5">
+        <h2 class="text-primary">Get Started Today</h2>
+        <a href="/register" class="btn btn-primary btn-lg">Sign Up for Free</a>
+    </section>
 </div>
 
 <!-- Modal -->
-<div id="modal" class="modal">
-    <div class="modal-content" id="modal-content">
-        <!-- Modal text will be injected here by JavaScript -->
+<div id="modal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-center p-4">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div id="modal-body">More information...</div>
+        </div>
     </div>
-    <span id="modal-close" class="modal-close">&times;</span>
 </div>
 
 <%- include('layouts/footer') %>
 
-<script>
-    // JavaScript for Modal functionality
-    const modal = document.getElementById('modal');
-    const modalContent = document.getElementById('modal-content');
-    const modalClose = document.getElementById('modal-close');
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
     document.querySelectorAll('.features li, .faq ul li, .how-it-works ul li').forEach(item => {
         item.addEventListener('click', () => {
-            modalContent.innerHTML = `<h3>${item.querySelector('.question')?.textContent || item.textContent}</h3><p>More information about ${item.querySelector('.question')?.textContent || item.textContent}.</p>`;
-            modal.style.display = 'block';
+            const modalContent = item.textContent;
+            document.getElementById('modal-body').textContent = `More information about ${modalContent}.`;
+            const modal = new bootstrap.Modal(document.getElementById('modal'));
+            modal.show();
         });
-    });
-
-    modalClose.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
     });
 </script>
